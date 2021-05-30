@@ -1,0 +1,23 @@
+<app-header-login></app-header-login>
+
+
+
+
+<app-logo></app-logo>
+
+<div class="container">
+
+    <h2 class="a"> hi! {{name}} please type the mobile verification
+        code you received</h2>
+
+    <div class="inputs">
+        <input type="number" placeholder="1" [(ngModel)]="num1">
+        <input type="number" placeholder="1" [(ngModel)]="num2">
+        <input type="number" placeholder="1" [(ngModel)]="num3">
+        <input type="number" placeholder="1" [(ngModel)]="num4">
+    </div>
+
+</div>
+<div class="but">
+    <button type="button" class="btn btn-primary btn-lg" (click)='check()'>continue</button>
+</div>

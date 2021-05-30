@@ -1,0 +1,58 @@
+<app-logo></app-logo>
+<div class="name">
+    <app-intern-name></app-intern-name>
+</div>
+<div class="afterName" ></div>
+<div class="container">
+  <h1>please tell us about yourself,personally</h1>
+  <br><br><br>
+  <div class="row">
+
+
+ 
+ <br>
+  <div class="col-sm-3"> medical institution</div>
+  <div class="col-sm-3">  residency</div>
+  <div class="col-sm-3"> department</div>
+  <div class="col-sm-1"></div>
+   
+    
+  <div class="col-sm-3">
+        <input class="xx" type="text"   [(ngModel)]= 'medicalInstitution'>
+        </div>
+       
+        <div class="col-sm-3">
+          <select name="aa" id=""[(ngModel)]= ' residency' >
+           
+            <option value="aaa">aaa</option>
+            <option value="bbb">bbb</option>
+            <option value="ccc">ccc</option>
+          </select>
+       </div>
+       <div class="col-sm-3">
+          <select name="aa" id="" [(ngModel)]= 'department'  >
+           
+            <option value="sss">sss</option>
+            <option value="nnn">nnn</option>
+            <option value="iii">iii</option>
+          </select>
+      </div>
+      <br>   <br>   <br>
+         
+            
+              <div class="col-sm-4">
+          
+             <label for="amountRange">year In Residency</label>
+              <input type="range" name="amountRange" min="0" max="10" value="0"   [(ngModel)]= 'yearInResidency'  />
+               
+               {{yearInResidency}}
+            </div>
+               <div class="col-sm-6"></div>
+           
+  
+  <div class="but">
+    <button type="button"  class="btn btn-primary btn-lg"  routerLink ="/questionnaire4" (click)= add()   >next</button>
+    </div>
+</div>
+</div>
+        

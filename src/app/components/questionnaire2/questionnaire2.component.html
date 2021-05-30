@@ -1,0 +1,80 @@
+
+<app-logo></app-logo>
+<div class="name">
+    <app-intern-name></app-intern-name>
+</div>
+<div class="afterName" ></div>
+<div class="container">
+  <h1>please tell us about yourself,personally</h1>
+  <br><br><br>
+  <div class="row">
+
+
+ 
+ <br>
+  <div class="col-sm-3">  age</div>
+  <div class="col-sm-3">  country</div>
+  <div class="col-sm-3">  city</div>
+  <div class="col-sm-1"></div>
+   
+    
+  <div class="col-sm-3">
+        <input type="text"   [(ngModel)]= 'age'>
+        </div>
+       
+        <div class="col-sm-3">
+          <select name="aa" id=""[(ngModel)]= 'country' >
+           
+            <option value="usa">usa</option>
+            <option value="israel">israel</option>
+            <option value="franch">franch</option>
+          </select>
+       </div>
+       <div class="col-sm-3">
+          <select name="aa" id="" [(ngModel)]= 'city'  >
+           
+            <option value="jeruslem">jeruslem</option>
+            <option value="newYork">newYork</option>
+            <option value="paris">paris</option>
+          </select>
+      </div>
+         <div class="col-sm-1">
+              </div> 
+              
+  <div class="col-sm-3"> graduationYear</div>
+  <div class="col-sm-3">  academicInstitution</div>
+  <div class="col-sm-4"></div>
+              <div class="col-sm-3">
+                <input type="text"  placeholder="graduationYear" [(ngModel)]= 'graduationYear'>
+                </div>
+               
+                <div class="col-sm-3">
+                  <select name="aa" id=""[(ngModel)]= 'academicInstitution' >
+                    <option value="academic">academic Institution</option>
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                  </select>
+               </div>  
+               <div class="col-sm-4">
+              </div> 
+</div>
+<div class="but">
+<button type="button"  class="btn btn-primary btn-lg"  routerLink ="/questionnaire3" (click)= add()   >next</button>
+</div>
+</div>
+
+        
+            
+ 
+  
+              
+                
+              
+
+
+
+
+
+
+

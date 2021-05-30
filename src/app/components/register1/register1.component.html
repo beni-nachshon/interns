@@ -1,0 +1,45 @@
+<app-logo></app-logo>
+
+<app-header-login></app-header-login>
+
+<div class="container">
+
+
+<h1>welcome, intern!</h1>
+<h4>pleas fill in the following fields to create an account</h4>
+<div class="row g-3">
+ 
+  
+    <div class="col-sm-3">
+      <input type="text" class="form-control" placeholder="id number" aria-label="id number"[(ngModel)]= 'id'>
+    </div>
+ 
+    <div class="col-sm-3">
+      <input type="text" class="form-control" placeholder="full name" aria-label="full name"[(ngModel)]= 'name'>
+    </div>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" placeholder="passport" aria-label="passport"[(ngModel)]= 'passport' >
+    </div>
+   
+    
+    <div class="col-sm-1">
+    </div>
+    
+    <div class="col-sm-3">
+        <input type="text" id="lll" class="form-control" placeholder="phone number" aria-label="phone number" [(ngModel)]= 'phone' >
+      </div>
+      <div class="col-sm-8">
+      </div>
+      <div class="col-sm-1">
+      </div>
+     
+  </div>
+</div>
+<div class="but" >
+  <button type="button"  class="btn btn-primary btn-lg" (click)  = 'add()'    routerLink ="/register2"  >continue</button>
+</div>
+
+ 
+  
+  
+  

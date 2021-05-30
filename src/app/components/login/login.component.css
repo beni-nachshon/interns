@@ -1,0 +1,12 @@
+.but{
+    
+    margin-top: 150px;
+}
+.name{
+    float: right;
+    font-size: 30px;
+
+}
+.afterName{
+    clear: both;
+}

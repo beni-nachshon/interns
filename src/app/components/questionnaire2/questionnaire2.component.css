@@ -1,0 +1,32 @@
+.name{
+    float: right;
+    font-size: 30px;
+
+}
+.afterName{
+    clear: both;
+}
+
+
+
+
+
+select  {
+    float: left; 
+    width: 230px; 
+    height: 35px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+input  {
+    float: left; 
+    width: 230px; 
+    height: 35px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.but{
+    
+    margin-top: 150px;
+}
+    

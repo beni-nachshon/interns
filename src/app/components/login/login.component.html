@@ -1,0 +1,40 @@
+<app-logo></app-logo>
+<div class="name">
+    <app-intern-name></app-intern-name>
+</div>
+<div class="afterName"></div>
+<div class="container">
+    <h1>please enter id and password</h1>
+    <br><br><br>
+    <div class="row">
+
+
+
+        <br>
+        <div class="col-sm-3"> id</div>
+        <div class="col-sm-3"> password</div>
+
+        <div class="col-sm-6"></div>
+
+
+        <div class="col-sm-3">
+            <input type="text" placeholder="id" #id>
+        </div>
+
+        <div class="col-sm-3">
+            <input type="password" placeholder="password" #password>
+
+
+        </div>
+
+        <div class="col-sm-6">
+        </div>
+
+
+
+
+    </div>
+    <div class="but">
+        <button type="button" class="btn btn-primary btn-lg" (click)='check(id.value, password.value)'>send</button>
+    </div>
+</div>
