@@ -17,9 +17,10 @@ name : any;
   addPassword(password : any){
     console.log(password);
     
-    this.interSService.upDatePassword(password);
-    
+    // this.interSService.upDatePassword(password);
+    this.interSService. addUser(password)
 
-  }
+
+      }
 
 }

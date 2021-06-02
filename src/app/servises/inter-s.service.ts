@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { InternC } from '../intern-c';
@@ -12,7 +12,7 @@ export class InterSService {
   name: any;
   passport: any;
   phone: any;
-  counter = -1;
+
   age: any;
   country: any;
   city: any;
@@ -21,47 +21,69 @@ export class InterSService {
  
   data2: user = {
     id: "",
-    _id: ""
+    _id: "",
+    token : ""
 
   }
   
 
   user11 = {};
 
-  public internsArray: any = [{}];
+   intern: any = {};
 
-  baceUrl = 'http://localhost:9000/'
+  baceUrl = 'http://localhost:9000/';
+  
+  option = {
+    headers :{}
+  }
 
 
 
   constructor(private httpClient: HttpClient) {
+   
 
   }
+  
 
   add() {
-    this.counter++;
-    this.internsArray[this.counter] = new InternC(this.id, this.name, this.passport, this.phone);
+    
+    this.intern = new InternC(this.id, this.name, this.passport, this.phone);
 
   }
 
-  addUser(id: any, name: any, passport: any, phone: any): Observable<object> {
-    return this.httpClient.post<user>(this.baceUrl + "api/users/create", { id: id, name: name, passport: passport, phone: phone })
+  addUser( password : any, headers?: any) {
+    console.log(password);
+    
+    return this.httpClient.post<user>(this.baceUrl + "api/create/create", { id : this.intern.id, name : this.intern. name,
+      passport:this.intern. passport, phone: this.intern.phone , password : password , role : 1}).subscribe(data=>{ this.data2 = data
+      console.log(data);
+      console.log(this.data2.token);
+
+      this.option.headers = new HttpHeaders({'token': this.data2.token})
+      
+
+      
+     
+
+      
+      
+      })
   }
 
-  upDateUser(age: any, country: any, city: any, graduationYear: any, academicInstitution: any,
-    medicalInstitution: any, residency: any, department: any, yearInResidency: any): Observable<object> {
+  upDateUser(   age: any, country: any, city: any, graduationYear: any, academicInstitution: any,
+    medicalInstitution: any, residency: any, department: any, yearInResidency: any, headers? :object): Observable<object> {
 
     return this.httpClient.put(this.baceUrl + "api/users/" + this.data2._id, {
       age: age, country: country, city: city, graduationYear: graduationYear,
       academicInstitution: academicInstitution, medicalInstitution: medicalInstitution, residency: residency,
       department: department, yearInResidency: yearInResidency
-    })
+    },this.option)
   }
 
   getUser() : Observable <any> {
-    console.log(typeof this.data2.id);
     
-    return this.httpClient.get(this.baceUrl + "api/users/" + this.data2.id);
+    
+    return this.httpClient.get(this.baceUrl + "api/users/" + this.data2.id,this.option);
   }
     
     ;
@@ -80,16 +102,33 @@ export class InterSService {
     console.log(password);
 
     return this.httpClient.post(this.baceUrl + "api/auth/login", { id: id, password: password });
-
-
-
-
   }
+
+  getOptions(headers? : any) {
+    headers = headers? headers:  {};
+    headers['content-type'] = 'application/json';
+   
+    
+    headers['x-access-token'] = this.data2. token;
+console.log( headers['x-access-token']);
+
+    
+    return {
+      headers: new HttpHeaders(headers)
+      
+      
+    }
+  }
+
+
+  
 
 }
 export interface user {
   id?: string,
-  _id?: string
+  _id?: string,
+  token? :any
 
 }
+
 

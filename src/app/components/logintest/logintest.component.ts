@@ -30,7 +30,7 @@ export class LogintestComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getUser();
+    
   }
   getUser(){
     this.interSService. getUser().subscribe(user1 => {this.user2 = user1.user;

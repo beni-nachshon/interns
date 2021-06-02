@@ -11,6 +11,7 @@ export class Questionnaire3Component implements OnInit {
   residency: any;
   department : any;
   yearInResidency : any;
+  
   constructor(private  interSService :  InterSService) { }
 
   ngOnInit(): void {

@@ -23,10 +23,10 @@ data1 = {}
 
   constructor(private  interSService :  InterSService , private router : Router) {
 
-  this.id = this.interSService.internsArray[this.interSService.counter].id;
-  this.name = this.interSService.internsArray[this.interSService.counter].name;
-  this.passport = this.interSService.internsArray[this.interSService.counter].passport;
-  this.phone = this.interSService.internsArray[this.interSService.counter].phone;
+  this.id = this.interSService.intern.id;
+  this.name = this.interSService.intern.name;
+  this.passport = this.interSService.intern.passport;
+  this.phone = this.interSService.intern.phone;
    }
 
   ngOnInit(): void {
@@ -38,10 +38,10 @@ data1 = {}
   //     this. num3 == this.interSService.internsArray[this.interSService.counter].password3 && 
   //     this. num4 == this.interSService.internsArray[this.interSService.counter].password4 )
   //     {
-        this.interSService. addUser(this.id,this.name,this.passport,this.phone).subscribe(data=>
-          {console.log( data);  this.interSService.data2 = data;
-          console.log(this.interSService.data2);
-            })
+        // this.interSService. addUser(this.id,this.name,this.passport,this.phone).subscribe(data=>
+        //   {console.log( data);  this.interSService.data2 = data;
+        //   console.log(this.interSService.data2);
+        //     })
         
         this.router.navigate(["/Password"]);
 

@@ -21,12 +21,14 @@ export class LoginComponent implements OnInit {
     this.interSService.data2.id = id;
     
 this.interSService.login(id , password).subscribe(login1=>{console.log(login1);
-  if(login1 == true){
-    this.router.navigate(["/Logintest"])
-  }
-  else{
+  if( ! login1){
+    
     console.log("Authentication failed");
     alert("Authentication failed");
+  }
+  else{
+    this.interSService.data2.token = login1;
+    this.router.navigate(["/Logintest"])
     
   }
 })

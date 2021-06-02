@@ -17,7 +17,7 @@ export class Questionnaire2Component implements OnInit {
 
   constructor(private  interSService :  InterSService) {
    
-    this.name = this.interSService.internsArray[this.interSService.counter].name;
+    this.name = this.interSService.intern.name;
      }
 
   ngOnInit(): void {
