@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InterSService } from 'src/app/servises/inter-s.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { InterSService } from 'src/app/servises/inter-s.service';
 })
 export class PasswordComponent implements OnInit {
 name : any;
-  constructor(private interSService : InterSService ) {
+  constructor(private interSService : InterSService , private router : Router ) {
    this.name = this.interSService.name; 
    }
 
@@ -19,6 +20,15 @@ name : any;
     
     // this.interSService.upDatePassword(password);
     this.interSService. addUser(password)
+
+    if(this.interSService.role == 1){
+      this.router.navigate(['/questionnaire1'])
+    }
+    else {
+      this.router.navigate(['/GetAll'])
+    }
+
+
 
 
       }

@@ -11,6 +11,9 @@ import { Questionnaire4Component } from './components/questionnaire4/questionnai
 import { LoginComponent } from './components/login/login.component';
 import { PasswordComponent } from './components/password/password.component';
 import { LogintestComponent } from './components/logintest/logintest.component';
+import { SupervisorRegisterComponent } from './components/supervisor-register/supervisor-register.component';
+import { SupervisorComponent } from './components/supervisor/supervisor.component';
+import { GetAllComponent } from './components/get-all/get-all.component';
 
 const routes: Routes = [
   {path : "", component : OnboardingComponent},
@@ -23,7 +26,10 @@ const routes: Routes = [
   {path : "questionnaire4", component : Questionnaire4Component},
   {path : "login", component : LoginComponent},
   {path : "Password", component : PasswordComponent},
-  {path : "Logintest", component : LogintestComponent}
+  {path : "Logintest", component : LogintestComponent},
+  {path : "SupervisorRegister", component :SupervisorRegisterComponent},
+  {path : "Supervisor", component :SupervisorComponent},
+  {path : "GetAll", component :GetAllComponent}
 ];
 
 @NgModule({

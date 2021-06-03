@@ -22,7 +22,8 @@ export class LogintestComponent implements OnInit {
     residency: "",
     department : "",
     yearInResidency :"" ,
-    password : ""
+    password : "",
+    role : ""
   };
 
   constructor(private interSService : InterSService) {
@@ -55,5 +56,6 @@ export interface user {
   department? : any;
   yearInResidency ?: any;
   password ?: any;
+  role? : any; 
 
 }

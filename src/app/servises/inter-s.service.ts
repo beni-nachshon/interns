@@ -18,6 +18,7 @@ export class InterSService {
   city: any;
   graduationYear: any;
   academicInstitution: any;
+  role = 1;
  
   data2: user = {
     id: "",
@@ -55,7 +56,7 @@ export class InterSService {
     console.log(password);
     
     return this.httpClient.post<user>(this.baceUrl + "api/create/create", { id : this.intern.id, name : this.intern. name,
-      passport:this.intern. passport, phone: this.intern.phone , password : password , role : 1}).subscribe(data=>{ this.data2 = data
+      passport:this.intern. passport, phone: this.intern.phone , password : password , role : this.role}).subscribe(data=>{ this.data2 = data
       console.log(data);
       console.log(this.data2.token);
 
@@ -85,8 +86,12 @@ export class InterSService {
     
     return this.httpClient.get(this.baceUrl + "api/users/" + this.data2.id,this.option);
   }
+  getall(): Observable <any> {
+    return this.httpClient.get(this.baceUrl + "api/users/getAll",this.option)
+
+  }
     
-    ;
+    
 
 
   
@@ -94,7 +99,7 @@ export class InterSService {
   upDatePassword(password: any) {
     console.log(password);
 
-    return this.httpClient.put(this.baceUrl + "api/users/" + this.data2._id, { password: password }).subscribe(data => console.log(data));
+    return this.httpClient.put(this.baceUrl + "api/users" + this.data2._id, { password: password }).subscribe(data => console.log(data));
 
   }
 
@@ -104,21 +109,8 @@ export class InterSService {
     return this.httpClient.post(this.baceUrl + "api/auth/login", { id: id, password: password });
   }
 
-  getOptions(headers? : any) {
-    headers = headers? headers:  {};
-    headers['content-type'] = 'application/json';
-   
-    
-    headers['x-access-token'] = this.data2. token;
-console.log( headers['x-access-token']);
-
-    
-    return {
-      headers: new HttpHeaders(headers)
-      
-      
-    }
-  }
+ 
+  
 
 
   

@@ -20,6 +20,9 @@ import { LoginComponent } from './components/login/login.component';
 import { PasswordComponent } from './components/password/password.component';
 import { LogintestComponent } from './components/logintest/logintest.component';
 import { HeaderLoginComponent } from './components/header-login/header-login.component';
+import { SupervisorRegisterComponent } from './components/supervisor-register/supervisor-register.component';
+import { SupervisorComponent } from './components/supervisor/supervisor.component';
+import { GetAllComponent } from './components/get-all/get-all.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,10 @@ import { HeaderLoginComponent } from './components/header-login/header-login.com
     LoginComponent,
     PasswordComponent,
     LogintestComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    SupervisorRegisterComponent,
+    SupervisorComponent,
+    GetAllComponent
   ],
   imports: [
     BrowserModule,
