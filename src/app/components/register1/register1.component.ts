@@ -23,17 +23,13 @@ export class Register1Component implements OnInit {
   ngOnInit(): void {
    
   }
-  add(){
+  saveInputsInService(){
     
-    this.interSService. id = this. id;
-    this.interSService. name= this. name;
-    this.interSService.  passport= this.  passport;
-    this.interSService. phone = this. phone;
-    this.interSService. add();
-   
-   
-   
-    
+    this.interSService.intern. id = this. id;
+    this.interSService.intern. name= this. name;
+    this.interSService. intern. passport= this.  passport;
+    this.interSService.intern. phone = this. phone;
+      
   }
 
 }

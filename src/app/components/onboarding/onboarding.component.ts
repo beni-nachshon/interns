@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InterSService } from 'src/app/servises/inter-s.service';
 
 @Component({
   selector: 'app-onboarding',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnboardingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private interSService : InterSService) {
+    this.interSService.intern.role = 1;
+  
+   }
 
   ngOnInit(): void {
   }
+ 
 
 }

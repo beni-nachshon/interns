@@ -8,13 +8,16 @@ import { InterSService } from 'src/app/servises/inter-s.service';
 })
 export class SupervisorComponent implements OnInit {
 
-  constructor(private interSService : InterSService  ) { }
+  constructor(private interSService : InterSService  ) { 
+  
+  }
 
   ngOnInit(): void {
   }
   changeRole(){
-    this.interSService.role =2;
+    this.interSService.intern.role =2;
 
   }
+ 
 
 }

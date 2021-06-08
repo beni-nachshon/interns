@@ -8,20 +8,18 @@ import { InterSService } from 'src/app/servises/inter-s.service';
   styleUrls: ['./password.component.css']
 })
 export class PasswordComponent implements OnInit {
-name : any;
-  constructor(private interSService : InterSService , private router : Router ) {
-   this.name = this.interSService.name; 
-   }
+  name : any;
+  constructor(private interSService: InterSService, private router: Router) {
+    this.name = this.interSService.intern.name;
+  }
 
   ngOnInit(): void {
   }
-  addPassword(password : any){
-    console.log(password);
-    
-    // this.interSService.upDatePassword(password);
-    this.interSService. addUser(password)
+  addPassword(password: any) {
 
-    if(this.interSService.role == 1){
+    this.interSService.createUser(password)
+
+    if (this.interSService.intern. role == 1) {
       this.router.navigate(['/questionnaire1'])
     }
     else {
@@ -31,6 +29,6 @@ name : any;
 
 
 
-      }
+  }
 
 }

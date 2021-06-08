@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InterSService } from 'src/app/servises/inter-s.service';
 
 @Component({
@@ -12,16 +13,16 @@ export class Questionnaire3Component implements OnInit {
   department : any;
   yearInResidency : any;
   
-  constructor(private  interSService :  InterSService) { }
+  constructor(private  interSService :  InterSService , private router : Router) { }
 
   ngOnInit(): void {
   }
-  add(){
- 
-   this.interSService.upDateUser( this.interSService. age , this.interSService. country ,this.interSService. city,
-    this.interSService. graduationYear, this.interSService. academicInstitution,this.medicalInstitution,
-   this.residency,this.department,this.yearInResidency ).subscribe(data =>  { console.log(data)})
-
+  saveInputsInService(){
+    this.interSService.intern. medicalInstitution = this.medicalInstitution;
+    this.interSService.intern. residency = this.residency;
+    this.interSService.intern.department = this.department;
+    this.interSService.intern.yearInResidency = this.yearInResidency;
+    this.interSService.upDateUser();
+    this.router.navigate(['/Logintest'])
   }
-
 }

@@ -9,7 +9,7 @@ import { InterSService } from 'src/app/servises/inter-s.service';
 export class InternNameComponent implements OnInit {
 name :any;
   constructor(private  interSService : InterSService ) { 
-    this.name = this.interSService.name;
+    this.name = this.interSService.intern.name;
   }
 
   ngOnInit(): void {

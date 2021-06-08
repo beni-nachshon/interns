@@ -7,7 +7,7 @@ import { InterSService } from 'src/app/servises/inter-s.service';
   styleUrls: ['./logintest.component.css']
 })
 export class LogintestComponent implements OnInit {
-  user2 : user = {
+  user : user = {
     _id : "" ,
     id : "",
     name  : "",
@@ -31,11 +31,11 @@ export class LogintestComponent implements OnInit {
    }
 
   ngOnInit(): void {
+   
     
   }
   getUser(){
-    this.interSService. getUser().subscribe(user1 => {this.user2 = user1.user;
-       console.log(this.user2);})
+    this.interSService. getUser().subscribe(user => {this.user = user.user})
    }
  
 

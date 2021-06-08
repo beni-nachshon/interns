@@ -22,12 +22,12 @@ export class Questionnaire2Component implements OnInit {
 
   ngOnInit(): void {
   }
-  add(){
-   this.interSService.age = this. age ;
-   this.interSService. country = this.country;
-   this.interSService. city = this.city;
-   this.interSService.graduationYear = this.graduationYear;
-   this.interSService.academicInstitution = this.academicInstitution;
+  saveInputsInService(){
+   this.interSService.intern.age = this. age ;
+   this.interSService.intern. country = this.country;
+   this.interSService.intern. city = this.city;
+   this.interSService.intern.graduationYear = this.graduationYear;
+   this.interSService.intern.academicInstitution = this.academicInstitution;
 
   }
 
